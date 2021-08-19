@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "1d5d3302-a14a-4cf2-a424-0f426af6d35b",
+		"name": "Postman-9Kv-RESTCONF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST-vlan",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin_1234!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<interface>\r\n    <name>vlan26</name>\r\n    <config>\r\n        <description>config con RESTCONG y XML Equipo4</description>\r\n        <type xmlns:ianaift=\"urn:ietf:params:xml:ns:yang:iana-if-type\">12vlan</type>\r\n    </config>\r\n    <routed-vlan>\r\n        <oc-ip:ipv4>\r\n            <oc-ip:addresses>\r\n                <oc-ip:address>\r\n                    <oc-ip:ip>192.168.26.1</oc-ip:ip>\r\n                    <oc-ip:config>\r\n                        <oc-ip:ip>192.168.26.1</oc-ip:ip>\r\n                        <oc-ip:prefix-length>24</oc-ip:prefix-length>\r\n                    </oc-ip:config>\r\n                </oc-ip:address>\r\n            </oc-ip:addresses>\r\n        </oc-ip:ipv4>\r\n    </routed-vlan>\r\n</interface>"
+				},
+				"url": {
+					"raw": "https://sbx-nxos-mgmt.cisco.com/restconf/data/openconfig-interfaces:interfaces",
+					"protocol": "https",
+					"host": [
+						"sbx-nxos-mgmt",
+						"cisco",
+						"com"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"openconfig-interfaces:interfaces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST-loopback",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin_1234!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<interface>\n\t<name>lo26</name>\n\t<config>\n\t\t<description>config con RESTCONF y XML Equipo4</description>\n\t\t<type xmlns:ianaift=\"urn:ietf:params:xml:ns:yang:iana-if-type\">softwareloopback</type>\n\t</config>\n\t<subinterfaces>\n\t\t<subinterface>\n\t\t\t<index>0</index>\n\t\t\t<oc-ip:ipv4>\n\t\t\t\t<oc-ip:addresses>\n\t\t\t\t\t<oc-ip:address>\n\t\t\t\t\t\t<oc-ip:ip>26.26.26.26</oc-ip:ip>\n\t\t\t\t\t\t<oc-ip:config>\n\t\t\t\t\t\t\t<oc-ip:ip>26.26.26.26</oc-ip:ip>\n\t\t\t\t\t\t\t<oc-ip:prefix-length>32</oc-ip:prefix-length>\n\t\t\t\t\t\t</oc-ip:config>\n\t\t\t\t\t</oc-ip:address>\n\t\t\t\t</oc-ip:addresses>\n\t\t\t</oc-ip:ipv4>\n\t\t</subinterface>\n\t</subinterfaces>\n</interface>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sbx-nxos-mgmt.cisco.com/restconf/data/openconfig-interfaces:interfaces",
+					"protocol": "https",
+					"host": [
+						"sbx-nxos-mgmt",
+						"cisco",
+						"com"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"openconfig-interfaces:interfaces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH-loopback",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin_1234!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<interface>\r\n    <name>lo44</name>\r\n    <config>\r\n        <description>Config PATCH loopback</description>\r\n        <enabled>false</enabled>\r\n        <type xmlns:ianaift=\"urn:ietf:params:xml:ns:yang:iana-if-type\">softwareloopback</type>\r\n    </config>\r\n    <subinterfaces>\r\n        <subinterface>\r\n            <index>0</index>\r\n            <oc-ip:ipv4>\r\n                <oc-ip:addresses>\r\n                    <oc-ip:address>\r\n                    <oc-ip:ip>44.44.44.44</oc-ip:ip>\r\n                    <oc-ip:config>\r\n                        <oc-ip:ip>44.44.44.44</oc-ip:ip>\r\n                        <oc-ip:prefix-length>32</oc-ip:prefix-length>\r\n                    </oc-ip:config>  \r\n                    </oc-ip:address>\r\n                </oc-ip:addresses>\r\n            </oc-ip:ipv4>\r\n        </subinterface>\r\n    </subinterfaces>\r\n</interface>"
+				},
+				"url": {
+					"raw": "https://sbx-nxos-mgmt.cisco.com/restconf/data/openconfig-interfaces:interfaces",
+					"protocol": "https",
+					"host": [
+						"sbx-nxos-mgmt",
+						"cisco",
+						"com"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"openconfig-interfaces:interfaces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-config-global",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin_1234!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+xml",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://sbx-nxos-mgmt.cisco.com/restconf/data/openconfig-interfaces:interfaces",
+					"protocol": "https",
+					"host": [
+						"sbx-nxos-mgmt",
+						"cisco",
+						"com"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"openconfig-interfaces:interfaces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH-eth1/6",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin_1234!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<interface>\r\n    <name>eth1/6</name>\r\n    <config>\r\n        <description>Config PATCH interfaz ethernet Equipo4</description>\r\n        <enabled>false</enabled>\r\n        <type xmlns:ianaift=\"urn:ietf:params:xml:ns:yang:iana-if-type\">ethernetCsmacd</type>\r\n    </config>\r\n    <subinterfaces>\r\n        <subinterface>\r\n            <index>0</index>\r\n            <oc-ip:ipv4>\r\n                <oc-ip:addresses>\r\n                    <oc-ip:address>\r\n                    <oc-ip:ip>192.168.6.1</oc-ip:ip>\r\n                    <oc-ip:config>\r\n                        <oc-ip:ip>192.168.6.1</oc-ip:ip>\r\n                        <oc-ip:prefix-length>24</oc-ip:prefix-length>\r\n                    </oc-ip:config>  \r\n                    </oc-ip:address>\r\n                </oc-ip:addresses>\r\n            </oc-ip:ipv4>\r\n        </subinterface>\r\n    </subinterfaces>\r\n</interface>"
+				},
+				"url": {
+					"raw": "https://sbx-nxos-mgmt.cisco.com/restconf/data/openconfig-interfaces:interfaces",
+					"protocol": "https",
+					"host": [
+						"sbx-nxos-mgmt",
+						"cisco",
+						"com"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"openconfig-interfaces:interfaces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH-eth1/7-ipv4-ipv6",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin_1234!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<interface>\r\n    <name>eth1/7</name>\r\n    <config>\r\n        <description>Config PATCH interfaz ethernet Equipo4</description>\r\n        <enabled>false</enabled>\r\n        <type xmlns:ianaift=\"urn:ietf:params:xml:ns:yang:iana-if-type\">ethernetCsmacd</type>\r\n    </config>\r\n    <subinterfaces>\r\n        <subinterface>\r\n            <index>0</index>\r\n            <oc-ip:ipv4>\r\n                <oc-ip:addresses>\r\n                    <oc-ip:address>\r\n                    <oc-ip:ip>192.168.7.1</oc-ip:ip>\r\n                    <oc-ip:config>\r\n                        <oc-ip:ip>192.168.7.1</oc-ip:ip>\r\n                        <oc-ip:prefix-length>24</oc-ip:prefix-length>\r\n                    </oc-ip:config>  \r\n                    </oc-ip:address>\r\n                </oc-ip:addresses>\r\n            </oc-ip:ipv4>\r\n        </subinterface>\r\n    </subinterfaces>\r\n    <subinterfaces>\r\n        <subinterface>\r\n            <index>0</index>\r\n            <oc-ip:ipv6>\r\n                <oc-ip:addresses>\r\n                    <oc-ip:address>\r\n                    <oc-ip:ip>2001:db8:cafe:61::1</oc-ip:ip>\r\n                    <oc-ip:config>\r\n                        <oc-ip:ip>2001:db8:cafe:61::1</oc-ip:ip>\r\n                        <oc-ip:prefix-length>64</oc-ip:prefix-length>\r\n                    </oc-ip:config>  \r\n                    </oc-ip:address>\r\n                </oc-ip:addresses>\r\n            </oc-ip:ipv6>\r\n        </subinterface>\r\n    </subinterfaces>\r\n</interface>"
+				},
+				"url": {
+					"raw": "https://sbx-nxos-mgmt.cisco.com/restconf/data/openconfig-interfaces:interfaces",
+					"protocol": "https",
+					"host": [
+						"sbx-nxos-mgmt",
+						"cisco",
+						"com"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"openconfig-interfaces:interfaces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT-mode-trunk",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin_1234!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<interface>\r\n    <name>eth1/11</name>\r\n    <config>\r\n        <enabled>true</enabled>\r\n        <mtu>1500</mtu>\r\n        <type xmlns:ianaift=\"urn:ietf:params:xml:ns:yang:iana-if-type\">ethernetCsmacd</type>\r\n    </config>\r\n    <subinterfaces>\r\n        <subinterface>\r\n            <index>0</index>\r\n        </subinterface>\r\n    </subinterfaces>\r\n    <ethernet>\r\n        <switched-vlan>\r\n            <config>\r\n                <interface-mode>TRUNK</interface-mode>\r\n            </config>\r\n        </switched-vlan>\r\n    </ethernet>\r\n</interface>"
+				},
+				"url": {
+					"raw": "https://sbx-nxos-mgmt.cisco.com/restconf/data/openconfig-interfaces:interfaces",
+					"protocol": "https",
+					"host": [
+						"sbx-nxos-mgmt",
+						"cisco",
+						"com"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"openconfig-interfaces:interfaces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT-mode-access-vlan-26",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin_1234!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<interface>\r\n    <name>eth1/26</name>\r\n    <config>\r\n        <enabled>true</enabled>\r\n        <mtu>1500</mtu>\r\n        <type xmlns:ianaift=\"urn:ietf:params:xml:ns:yang:iana-if-type\">ethernetCsmacd</type>\r\n    </config>\r\n    <subinterfaces>\r\n        <subinterface>\r\n            <index>0</index>\r\n        </subinterface>\r\n    </subinterfaces>\r\n    <ethernet>\r\n        <switched-vlan>\r\n            <config>\r\n                <access-vlan>26</access-vlan>\r\n                <interface-mode>ACCESS</interface-mode>\r\n            </config>\r\n        </switched-vlan>\r\n    </ethernet>\r\n</interface>"
+				},
+				"url": {
+					"raw": "https://sbx-nxos-mgmt.cisco.com/restconf/data/openconfig-interfaces:interfaces",
+					"protocol": "https",
+					"host": [
+						"sbx-nxos-mgmt",
+						"cisco",
+						"com"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"openconfig-interfaces:interfaces"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
